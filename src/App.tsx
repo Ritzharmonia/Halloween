@@ -262,7 +262,7 @@ export default function App() {
         <section className="relative w-full min-h-[80vh] flex flex-col items-center justify-center px-4 pt-14 pb-14 text-center">
           {/* Top Center Title */}
           <h1 className="font-cinzel-decorative text-2xl sm:text-4xl md:text-5xl font-extrabold text-slate-100 tracking-wide max-w-3xl leading-snug drop-shadow-[0_8px_20px_rgba(0,0,0,0.85)]">
-            Халловины өмнөх хар дарсан зүүд
+            Хэллоуины өмнөх хар дарсан зүүд
           </h1>
 
           {/* Clean Subtitle */}

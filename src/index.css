@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --color-midnight: #101B35;
+    --color-deep-navy: #172744;
+    --color-almost-black: #080B13;
+    --color-dusty-blue: #526780;
+    --color-muted-silver: #A6AAB5;
+    --color-faded-violet: #51465F;
+    --color-antique-grey: #777985;
+  }
+
+  body {
+    background-color: #080B13;
+    color: #A6AAB5;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-cinzel-decorative {
+    font-family: 'Cinzel Decorative', serif;
+  }
+}
+
+/* Custom gothic animations */
+@keyframes fogDrift1 {
+  0% { transform: translateX(-10%); }
+  50% { transform: translateX(10%); }
+  100% { transform: translateX(-10%); }
+}
+
+@keyframes fogDrift2 {
+  0% { transform: translateX(15%); }
+  50% { transform: translateX(-15%); }
+  100% { transform: translateX(15%); }
+}
+
+@keyframes gaslightFlicker {
+  0%, 100% { opacity: 0.95; filter: drop-shadow(0 0 16px rgba(255, 230, 160, 0.45)); }
+  25% { opacity: 0.78; filter: drop-shadow(0 0 10px rgba(255, 220, 140, 0.35)); }
+  50% { opacity: 0.92; filter: drop-shadow(0 0 15px rgba(255, 230, 160, 0.42)); }
+  75% { opacity: 0.7; filter: drop-shadow(0 0 8px rgba(255, 200, 120, 0.3)); }
+  85% { opacity: 0.98; filter: drop-shadow(0 0 18px rgba(255, 240, 170, 0.5)); }
+}
+
+@keyframes portalBluePulse {
+  0%, 100% {
+    box-shadow: inset 0 0 45px rgba(70, 145, 255, 0.5), 0 0 35px rgba(50, 110, 220, 0.4);
+    opacity: 0.92;
+  }
+  50% {
+    box-shadow: inset 0 0 65px rgba(95, 175, 255, 0.75), 0 0 50px rgba(75, 140, 255, 0.6);
+    opacity: 1;
+  }
+}
+
+@keyframes knockVibrate {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-3px, 1px) rotate(-0.5deg); }
+  40% { transform: translate(3px, -1px) rotate(0.5deg); }
+  60% { transform: translate(-2px, -1px) rotate(-0.3deg); }
+  80% { transform: translate(2px, 1px) rotate(0.3deg); }
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(1deg); }
+}
+
+.animate-fog-1 {
+  animation: fogDrift1 26s ease-in-out infinite;
+}
+
+.animate-fog-2 {
+  animation: fogDrift2 34s ease-in-out infinite;
+}
+
+.animate-gaslight {
+  animation: gaslightFlicker 4s infinite;
+}
+
+.animate-portal-blue {
+  animation: portalBluePulse 3.5s ease-in-out infinite;
+}
+
+.animate-knock-shake {
+  animation: knockVibrate 0.35s ease-in-out;
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+@keyframes candyFly {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(calc(var(--target-x) * 0.25), calc(var(--target-y) * 0.15 - 40px)) scale(1.4) rotate(90deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--target-x), var(--target-y)) scale(0.3) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-candy-fly {
+  animation: candyFly 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Custom scrollbar matching dark gothic aesthetic */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #080B13;
+}
+::-webkit-scrollbar-thumb {
+  background: #172744;
+  border-radius: 4px;
+  border: 1px solid #51465F;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #526780;
+}
